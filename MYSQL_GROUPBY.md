@@ -1,4 +1,17 @@
 1. Contare quanti iscritti ci sono stati ogni anno
+# SOLUZIONE:
+
+select year(enrolment_date) as enrolment_year, count(*) as students_numbers
+from students
+group by year(enrolment_date)
+order by enrolment_year desc
+
+
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+
+
+
 3. Calcolare la media dei voti di ogni appello d'esame
+
+
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
