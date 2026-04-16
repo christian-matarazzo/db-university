@@ -41,6 +41,16 @@ order by student_name, student_surname, departments, courses asc
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
+# SOLUZIONE :
+
+select degrees.name as degrees_name, courses.name as courses_name, teachers.name as teachers_name, teachers.surname as teacher_surname
+from degrees
+join courses on courses.degree_id = degrees.id
+join course_teacher on course_teacher.course_id = courses.id
+join teachers on course_teacher.teacher_id = teachers.id;
+
+
+
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di
 Matematica (54)
 
