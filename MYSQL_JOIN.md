@@ -31,6 +31,14 @@ where teachers.name = "Fulvio" and surname= "Amato"
 sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
 nome
 
+# SOLUZIONE :
+
+select students.name as student_name, students.surname as student_surname, departments.name as departments, courses.name as courses
+from students
+join departments on students.degree_id = departments.id
+join courses on students.degree_id = courses.id
+order by student_name, student_surname, departments, courses asc
+
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di
