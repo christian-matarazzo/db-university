@@ -17,6 +17,15 @@ where departments.name = 'Dipartimento di Neuroscienze'
 and degrees.level = 'magistrale';
 
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+# SOLUZIONE:
+
+select teachers.name, teachers.surname, teacher_id, courses.name
+from course_teacher
+join teachers on course_teacher.teacher_id = teachers.id
+join courses on course_teacher.course_id = courses.id
+where teachers.name = "Fulvio" and surname= "Amato" 
+
+ <!-- un appunto, non userei la richiesta per id qui, perché se domani dovessero cambiare nome e cognome spostando chi cerchiamo, l'id riporterebbe comunque un teacher_id = 44 che potrebbe non essere Fulvio Amato --> 
 
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui
 sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
