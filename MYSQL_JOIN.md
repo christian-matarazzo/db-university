@@ -54,6 +54,15 @@ join teachers on course_teacher.teacher_id = teachers.id;
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di
 Matematica (54)
 
+# SOLUZIONE :
+select distinct teachers.name, teachers.surname
+from departments
+join degrees on degrees.department_id = departments.id
+join courses on courses.degree_id = degrees.id
+join course_teacher on course_teacher.course_id = courses.id
+join teachers on course_teacher.teacher_id= teachers.id
+where departments.name = "Dipartimento di Matematica"
+
 7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti
 per ogni esame, stampando anche il voto massimo. Successivamente,
 filtrare i tentativi con voto minimo 18.
