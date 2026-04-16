@@ -20,7 +20,7 @@ order by office_address desc
 
 3. Calcolare la media dei voti di ogni appello d'esame
 
-# SOLUZIONE : 
+# SOLUZIONE ;
 
 select distinct exam_id, round(avg(vote),2) as exam_media
 from exam_student
