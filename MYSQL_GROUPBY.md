@@ -28,3 +28,10 @@ group by exam_id
 
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+# SOLUZIONE : 
+
+select departments.name as departments_name, count(*) as degrees_number
+from departments
+join degrees on department_id = departments.id
+group by departments.name
